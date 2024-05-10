@@ -24,7 +24,6 @@ void init()
     add_action("pray", "pray");
     add_action("pray", "regenerate");
     add_action("south", "south");
-	add_action("test", "test");
 }
 
 string short() {
@@ -70,8 +69,8 @@ void long(string str)
 	return;
     }
     if (str == "door") {
-	if (!"room/elevator"->query_door(0) &&
-	    "room/elevator"->query_level(0))
+	if (!"room/elevator"->query_door() &&
+	    "room/elevator"->query_level())
 	    write("The door is open.\n");
 	else
 	    write("The door is closed.\n");
@@ -106,8 +105,8 @@ int xyzzy() {
 }
 
 int west() {
-    if ("room/elevator"->query_door(0) ||
-	"room/elevator"->query_level(0) != 2) {
+    if ("room/elevator"->query_door() ||
+	"room/elevator"->query_level() != 2) {
 	write("The door is closed.\n");
 	return 1;
     }
@@ -119,7 +118,7 @@ int open(string str)
 {
     if (str != "door")
 	return 0;
-    if ("room/elevator"->query_level(0) != 2) {
+    if ("room/elevator"->query_level() != 2) {
 	write("You can't when the elevator isn't here.\n");
 	return 1;
     }
