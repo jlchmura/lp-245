@@ -24,6 +24,7 @@ void init()
     add_action("pray", "pray");
     add_action("pray", "regenerate");
     add_action("south", "south");
+	add_action("test", "test");
 }
 
 string short() {
