@@ -45,15 +45,27 @@ void long() {
 
 int query_value() { return value; }
 
+/**
+ * Sets the id of this object
+ * @param {string} str Id
+ */
 void set_id(string str) {
     local_weight = 1;
     name = str;
 }
 
+/**
+ * Sets the alias of this object
+    * @param {string} str Alias 
+*/
 void set_alias(string str) {
     alias_name = str;
 }
 
+/**
+ * Sets the short description for this object
+    * @param {string} str Short description
+ */
 void  set_short(string str) {
     short_desc = str;
     long_desc = "You see nothing special.\n";
@@ -63,6 +75,10 @@ void set_long(string str) {
     long_desc = str;
 }
 
+/**
+ * Sets the value of this object
+ * @param {int} v Value
+ */
 void set_value(int v) {
     value = v;
 }

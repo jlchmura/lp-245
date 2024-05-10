@@ -198,6 +198,10 @@ void set_name(string n) {
     long_desc = "You see nothing special.\n";
 }
 
+/**
+ * Sets the level for this monster
+ * @param {int} l Level  
+ */
 void  set_level(int l) {
     level = l;
     Str = l; Int = l; Con = l; Dex = l;
@@ -261,7 +265,7 @@ void set_spell_dam(int d) {
     spell_dam = d;
 }
 
-/* Set the frog curse. */
+/** Set the frog curse. */
 void set_frog() {
     frog = 1;
 }

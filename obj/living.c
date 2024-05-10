@@ -117,15 +117,17 @@ string query_gender_string();
 string query_stats();
 void show_age();
 
-/*
+/**
  * This routine is called from objects that moves the player.
  * Special: direction "X" means teleport.
  * The argument is "how#where".
  * The second optional argument is an object to move the player to.
  * If the second argument exists, then the first argument is taken
  * as the movement message only.
+ * @param {string} dir_dest Movement message
+ * @param {object} optional_dest_ob Object to move the player to
  */
-void move_player(string dir_dest, object optional_dest_ob)
+varargs void move_player(string dir_dest, object optional_dest_ob)
 {
     string dir;
     mixed dest;
@@ -215,12 +217,14 @@ void move_player(string dir_dest, object optional_dest_ob)
     }
 }
 
-/*
+/**
  * This function is called from other players when they want to make
  * damage to us. We return how much damage we received, which will
  * change the attackers score. This routine is probably called from
  * heart_beat() from another player.
  * Compare this function to reduce_hit_point(dam).
+ * @param {int} dam Amount of damange that will be received
+ * @return {int} Adjusted damage amount
  */
 int hit_player(int dam) {
     if (!attacker_ob)
@@ -284,6 +288,10 @@ int hit_player(int dam) {
     return dam;
 }
 
+/**
+ * Transfers all items to another object
+ * @param {object} dest Object to transfer all items to
+ */
 void transfer_all_to(object dest)
 {
     object ob;
@@ -306,22 +314,35 @@ void transfer_all_to(object dest)
     money = 0;
 }
 
+/**
+ * Returns the name of the object
+ * @return {string} Name of the object
+ */
 string query_name() {
     if (ghost)
 	return NAME_OF_GHOST;
     return cap_name;
 }
 
+/**
+ * Queries the alignment of the living object
+ * @return {int} Alignment
+ */
 int query_alignment() {
     return alignment;
 }
 
+/**
+ * Queries a flag that indicates if the living object is a NPC
+ * @return {int} 1 if the object is a NPC, 0 otherwise
+ */
 int query_npc() {
     return is_npc;
 }
 
-/*
+/**
  * This routine is called when we are attacked by a player.
+ * @param {object} ob The living object that is attacking us
  */
 void attacked_by(object ob) {
     if (!attacker_ob) {
@@ -335,6 +356,9 @@ void attacked_by(object ob) {
     }
 }
 
+/**
+ * Shows the stats of the living object 
+ */
 void show_stats() {
     int i;
     write(short() + "\nlevel:\t" + level +
@@ -363,6 +387,9 @@ void show_stats() {
     show_age();
 }
 
+/**
+ * Stops wielding a weapon
+ */
 void stop_wielding() {
     if (!name_of_weapon) {
 	/* This should not happen ! */
@@ -375,6 +402,10 @@ void stop_wielding() {
     weapon_class = 0;
 }
 
+/**
+ * Stop wearing an armour
+ * @param {string} name Name of the armour to stop wearing 
+ */
 void stop_wearing(string name) {
     if(!head_armour) {
 	/* This should not happen ! */
@@ -395,6 +426,10 @@ void stop_wearing(string name) {
     write("Ok.\n");
 }
 
+/**
+ * Queries the level of the living object
+ * @return {int} Level of the living object
+ */
 int query_level() {
     return level;
 }
@@ -551,6 +586,10 @@ object query_attack() {
     */
 }
 
+/**
+ * Drops all money from the living object
+ * @param {int} verbose If true, the drop is announced
+ */
 void drop_all_money(int verbose) {
     object mon;
     if (money == 0)
@@ -565,7 +604,9 @@ void drop_all_money(int verbose) {
     money = 0;
 }
 
-/* Wield a weapon. */
+/**
+ * Wield a weapon.
+ */
 void wield(object w) {
     if (name_of_weapon)
 	stop_wielding();
