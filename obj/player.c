@@ -42,7 +42,7 @@ int illegal_patch(string what);
 void add_standard_commands();
 static void wiz_commands();
 static void wiz_commands2();
-mixed valid_read(string str, int lvl);
+varargs mixed valid_read(string str, int lvl);
 mixed valid_write(string str);
 void drop_all(int verbose);
 static void get_all(object from);
@@ -56,6 +56,8 @@ string check_access_list(string top, string dir, string file);
 #if defined(__TLS__)
 void tls_init(int handshake_result);
 #endif
+
+object replace_player(object player_objet, string room);
 
 /* Some functions to set moving messages. */
 
@@ -2443,7 +2445,7 @@ mixed valid_write(string str) {
     return 0;
 }
 
-mixed valid_read(string str, int lvl) {
+varargs mixed valid_read(string str, int lvl) {
     string who, file;
     int i;
 
