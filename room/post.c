@@ -27,7 +27,7 @@ void exit() {
 	destruct(ob);
 }
 
-int query_mail(int silent) {
+varargs int query_mail(int silent) {
     string name;
     string new;
 
