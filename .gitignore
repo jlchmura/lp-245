@@ -1,0 +1,6 @@
+players/
+!players/lars
+/*.log
+/log
+!/log/README
+LP_SWAP*
