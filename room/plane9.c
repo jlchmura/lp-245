@@ -15,7 +15,7 @@ void extra_reset() {
 	frog->set_short("A cute little frog");
 	frog->set_wc(4);
 	frog->set_level(1);
-	frog->set_frog(1);
+	frog->set_frog();
 	move_object(frog, this_object());
 	crown = clone_object("obj/treasure");
 	crown->set_id("crown");

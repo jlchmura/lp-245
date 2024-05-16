@@ -117,6 +117,9 @@ string query_gender_string();
 string query_stats();
 void show_age();
 
+varargs mixed query_quests(string str);
+int second_life();
+
 /**
  * This routine is called from objects that moves the player.
  * Special: direction "X" means teleport.
@@ -297,7 +300,7 @@ void transfer_all_to(object dest)
     object ob;
     object next_ob;
 
-    ob = first_inventory(this_object());
+    ob = first_inventory(this_object());	
     while(ob) {
 	next_ob = next_inventory(ob);
 	/* Beware that drop() might destruct the object. */

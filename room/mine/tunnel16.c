@@ -17,7 +17,7 @@ object dwarf;
 	dwarf->set_al(-100);\
 	dwarf->set_short("A short and sturdy dwarf");\
 	dwarf->set_wc(10);\
-	dwarf->set_aci(1);\
+	dwarf->set_ac(1);\
 	move_object(dwarf, this_object());\
     }
 TWO_EXIT("room/mine/tunnel17", "north",

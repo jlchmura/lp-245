@@ -157,10 +157,22 @@ void set_hit_func(object ob) { hit_func = ob; }
 
 void set_wield_func(object ob) { wield_func = ob; }
 
+/**
+ * Sets an alias for this weapon
+ * @param {string} n Alias name 
+ */
 void set_alias(string n) { alias_name = n; }
 
+/**
+ * Set the short description for this weapon
+ * @param {string} sh Short description 
+ */
 void set_short(string sh) { short_desc = sh; long_desc = short_desc + "\n";}
 
+/**
+ * Set the long description for this weapon
+ * @param {string} long Long description
+ */
 void set_long(string long) { long_desc = long; }
 
 void set_read(string str) { read_msg = str; }

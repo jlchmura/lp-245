@@ -24,3 +24,4 @@ int dive() {
     write("You should try to get some portable air supply!\n");
     return 1;
 }
+

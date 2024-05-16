@@ -1,0 +1,10 @@
+{
+  "driver": {
+    "type": "ldmud",
+    "version": "3.6.5"
+  },
+  "defines": [{ "__VERSION__": "1.0" }, { "__COMPAT__": 0 }],
+  "diagnostics": {
+    "callOtherTargetUnknown": "hint"
+  }
+}

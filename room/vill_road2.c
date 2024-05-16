@@ -94,7 +94,7 @@ void start_harry() {
 	move_object(harry, this_object());
 	
 	harry->set_random_pick(20);
-	harry->set_move_at_reset(0);
+	harry->set_move_at_reset();
     }
 }
 

@@ -4,7 +4,7 @@ string code;
 
 string short()
 {
- return "A " + type + " key";
+  return "A " + type + " key";
 }
 
 int set_key_data(string  str)

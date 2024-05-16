@@ -7,34 +7,38 @@ object guard;
 
 void extra_reset() {
     if (!guard || !living(guard)) {
-	object key, weapon;
-        guard = clone_object("obj/monster");
-	guard->set_name("guard");
-	guard->set_level(11);
-	guard->set_hp(200);
-	guard->set_al(100);
-	guard->set_short("A guard");
-	guard->set_long("A big and sturdy guard.");
-	move_object(guard, this_object());
-	weapon = clone_object("obj/weapon");
-	weapon->set_name("shortsword");
-	weapon->set_short("A shortsword");
-	weapon->set_alias("sword");
-	weapon->set_long(
-"It is a professional looking short sword, used by warriors and guards");
-	weapon->set_class(15);
-	weapon->set_value(700);
-	weapon->set_weight(3);
-	transfer(weapon, guard);
-	guard->init_command("wield shortsword");
-	key = clone_object("obj/treasure");
-	key->set_id("key");
-	key->set_alias("bank key");
-	key->set_short("A bronze key");
-	key->set_value(10);
-	key->set_weight(1);
-	transfer(key, guard);
+
+		object key, weapon;
+		guard = clone_object("obj/monster");
+		guard->set_name("guard");
+		guard->set_level(11);
+		guard->set_hp(200);
+		guard->set_al(100);
+		guard->set_short("A guard");
+		guard->set_long("A big and sturdy guard.");
+		move_object(guard, this_object());
+
+		weapon = clone_object("obj/weapon");
+		weapon->set_name("shortsword");
+		weapon->set_short("A shortsword");
+		weapon->set_alias("sword");
+		weapon->set_long("It is a professional looking short sword, used by warriors and guards");
+		weapon->set_class(15);
+		weapon->set_value(700);
+		weapon->set_weight(3);	
+		
+		transfer(weapon, guard);
+		guard->init_command("wield shortsword");
+		
+		key = clone_object("obj/treasure");
+		key->set_id("key");
+		key->set_alias("bank key");
+		key->set_short("A bronze key");
+		key->set_value(10);
+		key->set_weight(1);
+		transfer(key, guard);
     }
+
     door_is_open = 0; door_is_locked = 1;
 }
 	
@@ -73,17 +77,19 @@ int id(string str) {
 
 int open(string str) {
     if (str && str != "door")
-	return 0;
+		return 0;
     if (door_is_open)
-	return 0;
+		return 0;
     if (door_is_locked) {
-	write("The door is locked.\n");
-	return 1;
+		write("The door is locked.\n");
+		return 1;
     }
-    door_is_open = 1;
+    
+	door_is_open = 1;
     write("Ok.\n");
     say(this_player()->query_name() + " opened the door.\n");
-    return 1;
+    
+	return 1;
 }
 
 int unlock(string str) {

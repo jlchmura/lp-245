@@ -411,7 +411,7 @@ int score(string arg)
 }
 
 /* Identify ourself. */
-int id(string str, int lvl) {
+varargs int id(string str, int lvl) {
   /*
    *  Some wizzies make invisibility items useable by
    *  players , and this will prevent cheating.
@@ -2576,7 +2576,7 @@ void compute_auto_str() {
     }
 }
 
-mixed query_quests(string str) {
+varargs mixed query_quests(string str) {
     string tmp, rest, rest_tmp;
     int i;
 

@@ -50,12 +50,12 @@ void extra_reset()
 "Arcanarton's magic experiments.\n");
 	     wyrm->set_wc(25);
 	     wyrm->set_ac(7);
-	     wyrm->set_spell_chance(50);
+	     wyrm->set_chance(50);
 	     wyrm->set_spell_dam(100);
-	     wyrm->set_spell_mesg(
+	     wyrm->set_spell_mess1(
 "Arcanarton's wyrm turns his head and breathes death at you.\n");
-             coins = clone_object("obj/money");
-	     coins->set_amount(random(500));
+		 coins = clone_object("obj/money");
+	     coins->set_money(random(500));
 	     move_object(coins, wyrm);
 	     jem = clone_object("obj/treasure");
              jemnum = random(3);

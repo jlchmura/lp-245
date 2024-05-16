@@ -55,7 +55,7 @@ string gnd_prn();
 /* some minor changes by Iggy. */
 /* get level asks get_next_exp() and  get_next_title() */
 
-void get_level(int str)
+varargs void get_level(int str)
 {
 	level = str;
 
@@ -198,7 +198,7 @@ int query_cost(int l) {
 int query_cost_for_level(int l, int e) {
     level = l;
     exp = e;
-    get_level(0);
+    get_level();
     if (next_exp <= exp)
 	return 0;
     return (next_exp - exp) * 1000 / EXP_COST;
@@ -239,7 +239,7 @@ int cost_for_level()
 	write("You will have to seek other ways.\n");
 	return 1;
     }
-    exp = player_ob->query_exp(0);
+    exp = player_ob->query_exp();
     get_level(level);
     if (next_exp <= exp) {
 	write("It will cost you nothing to be promoted.\n");
@@ -470,7 +470,7 @@ int banish(string who) {
 int south() {
     if (this_player()->query_level() < 20) {
 	write("A strong magic force stops you.\n");
-	say(this_player()->query_name(0) +
+	say(this_player()->query_name() +
 	    " tries to go through the field, but fails.\n");
 	return 1;
     }
@@ -483,9 +483,9 @@ int list_quests(string num)
 {
     int qnumber;
     if (num && (sscanf(num, "%d", qnumber) == 1))
-	"room/quest_room"->list(qnumber);
+		"room/quest_room"->list(qnumber);
     else
-	"room/quest_room"->count();
+		"room/quest_room"->count();
     return 1;
 }
 

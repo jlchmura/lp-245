@@ -5,10 +5,18 @@
 
 string hint_string, name;
 
+/**
+ * Sets a hint for the quest
+ * @param {string} h Quest hint string
+ */
 void set_hint(string h) {
     hint_string = h;
 }
 
+/**
+ * Sets the name of the quest
+ * @param {string} n name of the quest
+ */
 void set_name(string n) {
     name = n;
 }

@@ -73,7 +73,7 @@ void summon() {
     write("Summoning a player...\n");
     write(name);
     write(", His hp is ");
-    write(name->condition());
+    write(name->query_hit_point());
     write("\n");
 }
 

@@ -331,7 +331,7 @@ void set_dead_ob(object ob)
     dead_ob = ob;
 }
 
-void second_life()
+int second_life()
 {
     /* We have died remove chat and catch_talk */
     if(head)

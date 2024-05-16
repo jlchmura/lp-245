@@ -232,7 +232,11 @@ void set_al(int al) { alignment = al; }
 void  set_short(string sh) { short_desc = sh; long_desc = short_desc + "\n";}
 /* optional */
 void  set_long(string lo) { long_desc = lo; }
-/* optional */
+
+/**
+ * Sets the weapon class for this monster
+ * @param {int} wc Weapon class
+ */
 void  set_wc(int wc) { if (wc > weapon_class) weapon_class = wc; }
 /* optional */
 void  set_ac(int ac) { if (ac > armour_class) armour_class = ac; }
@@ -270,7 +274,9 @@ void set_frog() {
     frog = 1;
 }
 
-/* Set the whimpy mode */
+/**
+ * Set the monster to be whimpy
+ */
 void set_whimpy() {
     whimpy = 1;
 }
@@ -317,7 +323,7 @@ void  set_dead_ob(object ob)
     dead_ob = ob;
 }
 
-void  second_life()
+int second_life()
 {
     if(dead_ob)
 	return dead_ob->monster_died(this_object());
