@@ -125,6 +125,7 @@ void castle() {
     input_to("castle2");
 }
 
+
 void castle2(string back_up_wiz) {
     object castle_name;
     string player_name;

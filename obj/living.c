@@ -151,7 +151,7 @@ varargs void move_player(string dir_dest, object optional_dest_ob)
 	if (hunter)
 	    hunter->stop_hunter();
 	hunter = 0;
-	hunted = 0;
+	hunted = 0;	
     }
     if (attacker_ob && present(attacker_ob)) {
 	hunting_time = 10;
@@ -362,8 +362,8 @@ void attacked_by(object ob) {
 /**
  * Shows the stats of the living object 
  */
-void show_stats() {
-    int i;
+void show_stats() {		
+    int i;	
     write(short() + "\nlevel:\t" + level +
 	  "\ncoins:\t" + money +
 	  "\nhp:\t" + hit_point +
@@ -910,7 +910,7 @@ int reduce_hit_point(int dam) {
     /* this will detect illegal use of reduce_hit_point in weapons */
     hit_point -= dam;
     if (hit_point <= 0)
-	hit_point = 1;
+	hit_point = 1;	
     return hit_point;
 }
 

@@ -435,7 +435,7 @@ void inaugurate_master (int arg)
         set_extra_wizinfo(0, allocate(BACKBONE_WIZINFO_SIZE));
     }
 
-    mudwho_init(arg);
+    mudwho_init(arg); 
 
   // Wizlist simulation
   if (find_call_out("wiz_decay") < 0)

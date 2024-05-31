@@ -3,7 +3,7 @@
  * game driver, as a stand in for other objects.
  */
 
-string short() {
+string short() {        
     return "A singularity";
 }
 

@@ -6,5 +6,10 @@
   "defines": [{ "__VERSION__": "1.0" }, { "__COMPAT__": 0 }],
   "diagnostics": {
     "callOtherTargetUnknown": "hint"
+  },
+  "files": {
+    "init_files": [
+      "/room/init_file"
+    ]
   }
 }

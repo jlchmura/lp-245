@@ -432,10 +432,17 @@ varargs int id(string str, int lvl) {
     return 0;
 }
 
+/**
+ * Returns the title for this player
+ */
 string query_title() {
     return title;
 }
 
+/**
+ * Sets the level for this player
+ * @param {int} lev The level to set
+ */
 void set_level(int lev) {
     object scroll;
     if (lev > 21 || lev < level && level >= 20)
@@ -457,6 +464,14 @@ void set_level(int lev) {
     }
 }
 
+
+/**
+ * Sets the title of the player.
+ * If no title is provided, it displays the current title.
+ *
+ * @param t The new title for the player.
+ * @return Returns 1 on success.
+ */
 int set_title(string t) {
     if (!t) {
         write("Your title is " + title + ".\n");
@@ -2287,6 +2302,7 @@ int clone(string str) {
         write("Clone what object ?\n");
         return 1;
     }
+    
     str = valid_read(str, WIZ);
     if (!str) {
         write("Invalid file.\n");

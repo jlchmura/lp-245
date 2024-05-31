@@ -35,6 +35,11 @@ int get()
   return money>0;
 }
 
+/**
+ * Sets the value of money to the specified amount.
+ *
+ * @param m The amount of money to set.
+ */
 void set_money(int m) {
     money = m;
 }

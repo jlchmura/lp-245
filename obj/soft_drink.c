@@ -158,6 +158,10 @@ int drink(string str)
 	return 1;
 }
 
+/**
+ * Min cost of the drink
+ * @return {int} cost
+ */
 int min_cost()
 {
 	return 4 * strength + (strength * strength) / 10;
@@ -218,10 +222,9 @@ void set_empty_container(string ec)
 	empty_container = ec;
 }
 
-/*
+/**
  * Things that other objects might want to know.
  */
-
 int query_value()
 {
 	if (full)
