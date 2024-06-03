@@ -559,7 +559,7 @@ int catch_shout(string str)
     if (this_player()->query_level() >= listen_to_shouts_from_level) {
         tell_object(this_object(),str);
         return 1;
-    }
+    } 
     return 0;
 }
 
